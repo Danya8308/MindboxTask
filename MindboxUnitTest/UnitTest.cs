@@ -11,7 +11,8 @@ namespace MindboxUnitTest
             var answerQuestionPairs = new Dictionary<bool, Triangle>()
             {
                 [true] = new Triangle(4d, 3d, 5d),
-                [false] = new Triangle(2d, 2d, 3d)
+                [false] = new Triangle(2d, 2d, 3d),
+                [false] = new Triangle(3d, 3d, 3d),
             };
 
             foreach (var pair in answerQuestionPairs)

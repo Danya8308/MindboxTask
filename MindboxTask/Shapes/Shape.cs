@@ -16,6 +16,14 @@ namespace MindboxTask.Shapes
             Lengths = new ReadOnlyCollection<double>(lengths);
         }
 
+        public static IEnumerable<double> GetAreas(params Shape[] shapes)
+        {
+            foreach (var shape in shapes)
+            {
+                yield return shape.GetArea();
+            }
+        }
+
         private bool IsAvaliable(double[] lengths)
         {
             foreach (var length in lengths)
@@ -27,14 +35,6 @@ namespace MindboxTask.Shapes
             }
 
             return CheckAvailable(lengths);
-        }
-
-        public static IEnumerable<double> GetAreas(params Shape[] shapes)
-        {
-            foreach (var shape in shapes)
-            {
-                yield return shape.GetArea();
-            }
         }
 
         public abstract double GetArea();
